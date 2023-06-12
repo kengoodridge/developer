@@ -63,7 +63,7 @@ def generate_response(model, system_prompt, user_prompt, *args):
 def generate_file(filename, model=DEFAULT_MODEL, filepaths_string=None, shared_dependencies=None, prompt=None):
     # call openai api with this prompt
     filecode = generate_response.call(model, 
-        f"""You are an AI developer who is trying to write a program that will generate code for the user based on their intent.
+        f"""You are an ReactNative developer who is trying to write a program that will generate code for the user based on their intent.
         
     the app is: {prompt}
 
@@ -113,7 +113,7 @@ def main(prompt, directory=DEFAULT_DIR, model=DEFAULT_MODEL, file=None):
 
     # call openai api with this prompt
     filepaths_string = generate_response.call(model, 
-        """You are an AI developer who is trying to write a program that will generate code for the user based on their intent.
+        """You are an ReactNative developer who is trying to write a program that will generate code for the user based on their intent.
         
     When given their intent, create a complete, exhaustive list of filepaths that the user would write to make the program.
     
@@ -144,7 +144,7 @@ def main(prompt, directory=DEFAULT_DIR, model=DEFAULT_MODEL, file=None):
 
             # understand shared dependencies
             shared_dependencies = generate_response.call(model, 
-                """You are an AI developer who is trying to write a program that will generate code for the user based on their intent.
+                """You are an ReactNative developer who is trying to write a program that will generate code for the user based on their intent.
                 
             In response to the user's prompt:
 

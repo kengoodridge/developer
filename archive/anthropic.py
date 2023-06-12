@@ -72,7 +72,7 @@ def generate_response(system_prompt, user_prompt, *args):
 def generate_file(filename, filepaths_string=None, shared_dependencies=None, prompt=None):
     # call api with this prompt
     filecode = generate_response.call(
-        f"""You are an AI developer who is trying to write a program that will generate code for the user based on their intent.
+        f"""You are an ReactNative developer who is trying to write a program that will generate code for the user based on their intent.
         
     the app is: {prompt}
 
@@ -115,7 +115,7 @@ def main(prompt, outputdir=generatedDir, file=None):
 
     # call api with this prompt
     filepaths_string = generate_response.call(
-        """You are an AI developer who is trying to write a program that will generate code for the user based on their intent.
+        """You are an ReactNative developer who is trying to write a program that will generate code for the user based on their intent.
         
     When given their intent, create a complete, exhaustive list of filepaths that the user would write to make the program.
     
@@ -146,7 +146,7 @@ def main(prompt, outputdir=generatedDir, file=None):
 
             # understand shared dependencies
             shared_dependencies = generate_response.call(
-                """You are an AI developer who is trying to write a program that will generate code for the user based on their intent.
+                """You are an ReactNative developer who is trying to write a program that will generate code for the user based on their intent.
                 
             In response to the user's prompt:
 
