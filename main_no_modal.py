@@ -60,6 +60,14 @@ def generate_response(system_prompt, user_prompt, *args):
     reply = response.choices[0]["message"]["content"]
     return reply
 
+def get_code_block(text):
+    if '```' in text:
+        start = text.index('```')
+        lang_start = text.index('\n', start) + 1
+        end = text.index('```', lang_start+1)
+        return text[lang_start:end]
+    else:
+        return text
 
 def generate_file(
     filename, filepaths_string=None, shared_dependencies=None, prompt=None
@@ -100,7 +108,7 @@ def generate_file(
     """,
     )
 
-    return filename, filecode
+    return filename, get_code_block(filecode)
 
 
 def main(prompt, directory=DEFAULT_DIR, file=None):
